@@ -1,0 +1,23 @@
+mkdir docker
+cd docker
+create index.html
+     prajawal
+     aishu
+     
+create dockerfile
+     FROM nginx:alpine
+     COPY . /usr/share/nginx/html
+     
+docker build -t < name of image> .
+ 
+docker tag <dockerhub name>/<Image name>
+
+docker push <tagname >
+
+docker run -d --name <name what u want> -p 80:80 <image name>
+
+
+
+
+
+     
