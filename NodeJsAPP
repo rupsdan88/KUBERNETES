@@ -1,0 +1,87 @@
+$ sudo apt-get install npm 
+$ npm --version
+$ node --version
+$ npm init -y
+$ npm install express
+
+
+**********create index.js and put the following content inside the js file
+$ cat >>index.js
+const express = require('express')
+const os = require('os')
+
+const app = express()
+app.get('/', (req, res) => {
+        res.send(`Hi from ${os.hostname()}!`)
+})
+
+const port = 3000
+app.listen(port, () => console.log(`listening on port ${port}`))
+
+***********Then check the js file is working or not, it is showing the output with os name
+$ node index.js
+
+***********create Dockerfile and put the following content inside the Dockerfile
+$ cat >>Dockerfile
+FROM node:13-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD node index.js
+
+**********build the docker image using dockerfile
+$ docker build -t node-hello-app .
+
+*********Run the container using docker image, it is showing the output with container id
+$ docker run --rm -d -p 3000:3000 node-hello-app
+
+*********Now check the container is running or not
+$ docker ps
+
+*********Stop the container: 
+$ docker stop CONTAINER_ID
+
+*********Push the image to DockerHub: 
+$ docker push rupsdan/node-hello-app
+
+
+
+
+***************************************************************K8S*******************************************************************************
+kubectl get nodes
+$ kubectl get nodes
+
+create deployment from docker image
+$ kubectl create deployment --image rupsdan/node-hello-app node-app
+
+increase replicas
+$ kubectl scale deployment node-app --replicas 3
+
+watch pods
+$ watch kubectl get pods
+
+expose 
+$ kubectl expose deployment node-app --type NodePort --port 3000
+
+check service
+$ kubectl get svc
+
+check all
+$ kubectl get all
+
+grab the public ip one
+$ kubectl get nodes -o wide
+
+Edit the service like port number or service(loadbaancer or nodeport)
+$ kubectl edit service node-app
+
+verify service
+$ kubectl get svc
