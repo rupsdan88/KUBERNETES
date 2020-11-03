@@ -1,0 +1,12 @@
+k3s --version
+kubectl get nodes
+kubectl get pods
+kubectl get deploy
+kubectl get service
+
+
+
+1. create index.html file and docker file
+2. you can take image what u want like nginx, http, apache, tomcat  path:- /usr/share/nginx/html
+3. deploy your application
+4. create your service
