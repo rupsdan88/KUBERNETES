@@ -1,0 +1,26 @@
+kubectl get nodes, no, node
+kubectl get nodes -o wide //show output file in jason or yaml format
+
+
+kubectl get nodes
+kubectl get pods
+kubectl get deploy
+kubectl get service
+kubetctl get namespace
+kubectl get all
+
+kubectl scale deploy name --replicas <no of replicas>
+
+kubectl run elastic --image=<name of image> --replicas=<no of replicas>
+
+kubectl get pods -w  //-w means watch
+
+kubectl expose <deploy name> --port <9200>
+
+kubectl describe <deploy name>
+
+
+kubectl rollout undo deploy worker
+kubectl rollout status deploy worker
+
+kubectl explain pods | less
