@@ -1,0 +1,20 @@
+UPDATE YOUR APPLICATION WITHOUT DOWN TIME
+
+First get all deployments
+$ kubectl get deployment
+
+Choose Which deployment application you want to update
+$ kubectl set image deployment/<deployment_name> <deployment_name>=<latest image src>
+
+Check status of your updated application
+$ kubectl rollout status deployment/<deployment_name>
+
+Check History of Your Updated application
+$ kubectl rollout history deployment/<deployment_name>
+
+If you want to Undo your previous application
+$ kubectl rollout undo deployment/<deployment_name>
+
+check description of your deployment
+$ kubectl describe deployment <deployment_name>
+
