@@ -1,0 +1,14 @@
+HOW TO CREATE NAMESPACE AND HOW TO DO WORK WITH YOUR NAME SPACE
+ First Check Namespaces
+ $ kubectl get ns
+ 
+ Create your namespace
+ $ kubectl create ns <name_of-namespace>
+ 
+ Work with your namespaces
+ $ kubectl create -f <filename.yaml>  -n <name_of_namespace>
+ 
+ Check again namesapces
+ $kubectl get ns
+ 
+ 
