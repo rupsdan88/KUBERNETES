@@ -1,0 +1,15 @@
+kubectl get cm
+kubectl get cm <cm_name>
+kubectl api-resource | grep configmap
+kubectl explain --recursive cm | less
+kubectl describe cm <cm_name>
+kubectl create cm <cm_name> --from-litral=<key_name>=<value>
+kubectl create cm <cm_name> --from-litral=<key_name1>=<value1> --from-litral=<key_name2>=<value2> --from-litral=<key_name3>=<value3> --from-litral=<key_namen>=<valuen>
+kubectl create cm <cm_name> --from-file=<file_name>
+kubectl create cm <cm_name> --from-file=<file_name1> --from-file=<file_name2> --from-file=<file_name3> --from-file=<file_namen>
+kubectl create cm <cm_name> --from-env-file=<env_file_name>
+kubectl create cm <cm_name> --from-literal=<key1>=<value1> --dry-run 
+kubectl create cm <cm_name> --from-literal=<key1>=<value1> --dry-run -o yaml
+kubectl create cm <cm_name> --from-literal=<key1>=<value1> --dry-run=client
+kubectl create cm <cm_name> --from-literal=<key1>=<value1> --dry-run=server
+kubectl create cm <cm_name> --from-literal=<key1>=<value1> --dry-run -o yaml ><new_file_name>
