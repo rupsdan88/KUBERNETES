@@ -1,0 +1,37 @@
+Create new directory
+$ mkdir <Directory Name>
+
+Inside the directory create web design file like html, css, js
+$ vi <web design file using .html extension>
+
+create Dockerfile //Remember Dockerfile "D" always CAPITAL
+$ vi Dockerfile
+FROM nginx: alpine
+COPY . /usr/share/nginx/html
+
+Build docker image
+$ docker build -t <name of image> .  //Remember . means current directory
+
+Check docker images
+$ docker images
+
+Create TAG on docker image
+$ docker tag <imageid/imagename> <dockerhubid>/<imagename>:<version/tag>
+
+Login with docker hub
+$ docker login
+
+Push on docker hub
+$ docker push  <dockerhubid>/<imagename>:<version/tag>
+
+Deploy on Kubernetes
+$ kubectl create deployment <deployment_name> --image=<image src>
+
+Check deployment
+$ kubectl get deployment
+
+Create Service On kubernetes
+$ kubectl create service <service name> <deploy name> --tcp <port>:<target port>
+
+check service 
+$ kubectl get service
