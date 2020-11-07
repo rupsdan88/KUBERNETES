@@ -1,0 +1,21 @@
+How To Increase Number Of Replicas
+first check deployment
+$ kubectl get deployment
+
+Check pods
+$ kubectl get pods
+
+Increase Number of replicas 
+$ kubectl scale deployment/<deployment_name> --replicas=<number_of_replicas>
+
+again check number of pods
+$ kubectl get pods 
+
+Decrease Number of replicas
+$ kubectl scale deployment/<deployment_name> --replicas=<number_of_replicas>
+
+again check number of pods
+$ kubectl get pods 
+
+Check Number of replicas  controller 
+$ kubectl get rc
