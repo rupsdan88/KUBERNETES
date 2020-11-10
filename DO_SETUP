@@ -1,5 +1,6 @@
 sudo snap install doctl -y
 doctl auth init
+sudo connect doctl:kube-config
 echo $KUBECONFIG
 mkdir .kube
 doctl kubernetes cluster kubeconfig  save <TOKEN ID>
