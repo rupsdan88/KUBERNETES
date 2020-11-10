@@ -1,8 +1,12 @@
 sudo snap install doctl -y
 doctl auth init
-sudo connect doctl:kube-config
+sudo snap connect doctl:kube-config
 echo $KUBECONFIG
 mkdir .kube
 doctl kubernetes cluster kubeconfig  save <TOKEN ID>
 cd ~/.kube && kubectl --kubeconfig="config" get nodes
 export KUBECONFIG=~/.kube/config
+
+kubectl get ns -A
+kubectl create ns <ns_name> 
+kubectl get ns
