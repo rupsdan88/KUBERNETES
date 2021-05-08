@@ -32,6 +32,10 @@ $ kubectl get deployment
 
 Create Service On kubernetes
 $ kubectl create service <service name> <deploy name> --tcp <port>:<target port>
+service name means loadbalancer
 
 check service 
 $ kubectl get service
+
+get all svc
+$kubectl get svc --all-namespaces
