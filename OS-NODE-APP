@@ -63,7 +63,7 @@ create deployment from docker image
 $ kubectl create deployment --image rupsdan/node-hello-app node-app
 
 increase replicas
-$ kubectl scale deployment node-app --replicas 3
+$ kubectl scale deployment node-app --replicas=3
 
 watch pods
 $ watch kubectl get pods
